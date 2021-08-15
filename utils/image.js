@@ -152,7 +152,7 @@ async function findDuplicates () {
               await db.images.remove({_id: data.image._id});
             }
           
-            await bot.react(imageMessage, "♻️");
+            await bot.react(imageMessage, bot.client.emojis.get('464719031270899732'));
             if (config.logChannel) await bot.notify({channel : {id: config.logChannel}}, embed);
         }
         let a = await dbUtils.markAsProcessed(data.image);
